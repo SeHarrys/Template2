@@ -30,7 +30,7 @@ use Template::Provider;
 use Template::Service;
 use File::Basename;
 use File::Path;
-use Scalar::Util qw(blessed);
+use Scalar::Util 'blessed';
 
 our $VERSION = '3.101';
 our $ERROR   = '';
@@ -92,8 +92,7 @@ sub process {
 #------------------------------------------------------------------------
 
 sub service {
-    my $self = shift;
-    return $self->{ SERVICE };
+    return shift->{ SERVICE };
 }
 
 
@@ -105,8 +104,7 @@ sub service {
 #------------------------------------------------------------------------
 
 sub context {
-    my $self = shift;
-    return $self->{ SERVICE }->{ CONTEXT };
+    return shift->{ SERVICE }->{ CONTEXT };
 }
 
 sub template {
